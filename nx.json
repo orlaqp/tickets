@@ -7,5 +7,18 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "frontend": {
+      "tags": ["ui"]
+    },
+    "frontend-e2e": {
+      "tags": []
+    },
+    "data-access-tickets": {
+      "tags": ["data-access"]
+    },
+    "feature-tickets": {
+      "tags": ["data-access"]
+    }
+  }
 }

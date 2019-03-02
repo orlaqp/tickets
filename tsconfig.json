@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@tickets/data-access-tickets": ["libs/data-access-tickets/src/index.ts"],
+      "@tickets/feature-tickets": ["libs/feature-tickets/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

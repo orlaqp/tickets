@@ -1,0 +1,16 @@
+<h1 class="mat-display-1">Tickets</h1>
+
+<ng-container *ngIf="tickets$ | async as tickets; else loading">
+    <ul>
+        <li *ngFor="let t of tickets">
+          Ticket: {{t.id}}, {{t.description}}
+        </li>
+      </ul>
+</ng-container>
+
+<ng-template #loading>
+    Loading ...
+</ng-template>
+
+
+
