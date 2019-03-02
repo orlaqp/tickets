@@ -1,13 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatCheckboxModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Actions, Store } from '@ngxs/store';
+import { Subject } from 'rxjs';
 
 import { TicketFormComponent } from './ticket-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule, MatSelectModule, MatCheckboxModule, MatInputModule } from '@angular/material';
-import { NgxsModule, Store, Actions } from '@ngxs/store';
-import { RouterModule } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Subject } from 'rxjs';
 
 class FakeStore {
     dispatch = jest.fn();
