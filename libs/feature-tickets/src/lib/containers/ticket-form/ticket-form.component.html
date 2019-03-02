@@ -1,0 +1,32 @@
+<div fxLayout="column" fxLayoutGap="20px" [formGroup]="fg">
+
+  <div class="mat-title" fxFlex>Ticket Form</div>
+
+  <mat-form-field fxFlex appearance="fill">
+    <mat-label>Description</mat-label>
+    <input matInput placeholder="description" formControlName="description">
+  </mat-form-field>
+
+  <ng-container *ngIf="editMode">
+
+    <mat-form-field fxFlex appearance="fill">
+      <mat-select required>
+        <mat-option>-- None --</mat-option>
+        <mat-option *ngFor="let u of users$ | async" value="{{ u.id }}">{{ u.name }}</mat-option>
+      </mat-select>
+      <mat-label>Assignee</mat-label>
+    </mat-form-field>
+
+
+    <div fxFlex>
+      <mat-checkbox formControlName="completed" value="" color="primary">Completed</mat-checkbox>
+    </div>
+  </ng-container>
+
+
+  <div fxFlex fxLayout="row" fxLayoutGap="10px">
+    <button fxFlex="initial" mat-button color="primary" (click)="save()">Save</button>
+    <button fxFlex="initial" mat-button (click)="cancel()">Cancel</button>
+  </div>
+
+</div>

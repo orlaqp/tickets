@@ -1,0 +1,17 @@
+<h1 class="mat-display-1">Tickets</h1>
+
+<ng-container *ngIf="tickets$ | async as tickets; else loading">
+  <ul>
+    <li *ngFor="let t of tickets">
+      Ticket: {{t.id}}, {{t.description}}
+      <button mat-button [routerLink]="['/' + t.id]" routerLinkActive="router-link-active" >Edit</button>
+    </li>
+  </ul>
+
+  <button mat-raised-button color="primary" [routerLink]="['/new']" >Add Ticket</button>
+
+</ng-container>
+
+<ng-template #loading>
+  Loading ...
+</ng-template>
