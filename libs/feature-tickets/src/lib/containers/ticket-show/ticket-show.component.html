@@ -1,3 +1,22 @@
-<p>
-  ticket-show works!
-</p>
+<ng-container *ngIf="ready$ | async">
+
+  <div fxLayout="column" fxLayoutGap="20px">
+
+    <div class="mat-title" fxFlex>Ticket Details</div>
+
+    <div fxFlex class="mat-title">{{ ticket.description }}</div>
+
+    <mat-form-field fxFlex appearance="fill">
+      <mat-select [formControl]="assigneeCtrl">
+        <mat-option *ngFor="let u of users" value="{{ u.id }}">{{ u.name }}</mat-option>
+      </mat-select>
+      <mat-label>Assignee</mat-label>
+    </mat-form-field>
+
+    <div fxFlex>
+      <mat-checkbox [formControl]="completedCtrl" value="" color="primary">Completed</mat-checkbox>
+    </div>
+
+  </div>
+
+</ng-container>

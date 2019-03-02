@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatButtonModule, MatFormFieldModule, MatSlideToggleModule, MatCheckboxModule, MatInputModule, MatSelectModule } from '@angular/material';
 import { Route, RouterModule } from '@angular/router';
 import { DataAccessTicketsModule } from '@tickets/data-access-tickets';
@@ -38,6 +38,7 @@ const materialModules = [
     CommonModule,
     FlexLayoutModule,
     RouterModule.forChild(featureTicketsRoutes),
+    FormsModule,
     ReactiveFormsModule,
     ...materialModules,
     DataAccessTicketsModule

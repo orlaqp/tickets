@@ -12,7 +12,21 @@ export class NewTicketAction {
     constructor(public payload: { description: string }) {}
 }
 
-export class FetchTicketAction {
+export class SelectTicketAction {
     static readonly type = '[Tickets] Fetch Ticket';
-    constructor(public id: string) {}
+    constructor(public id: number) {}
+}
+
+export class DeselectTicketAction {
+    static readonly type = '[Tickets] Deselect Ticket';
+}
+
+export class AssignTicketAction {
+    static readonly type = '[Tickets] Assign Ticket';
+    constructor(public ticketId: number, public userId: number) {}
+}
+
+export class CompleteTicketAction {
+    static readonly type = '[Tickets] Complete Ticket';
+    constructor(public ticketId: number, public complete: boolean) {}
 }
