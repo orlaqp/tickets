@@ -2,6 +2,7 @@ import { Ticket } from '../types';
 
 export class FetchTicketsAction {
     static readonly type = '[Tickets] Fetch Tickets';
+    constructor(public query: string) {}
 }
 export class FetchUsersAction {
     static readonly type = '[Tickets] Fetch Users';

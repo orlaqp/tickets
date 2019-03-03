@@ -1,6 +1,15 @@
 <h1 class="mat-display-1">Tickets</h1>
 
+<!-- here we can give better feedback when searching -->
+
 <ng-container *ngIf="tickets$ | async as tickets; else loading">
+
+    <mat-form-field appearance="outline" class="search-control">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="type to filter tickets" [formControl]="query">
+        <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
   <ul>
     <li *ngFor="let t of tickets">
       Ticket: {{t.id}}, {{t.description}}
