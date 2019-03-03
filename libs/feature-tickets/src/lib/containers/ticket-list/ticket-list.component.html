@@ -6,18 +6,18 @@
 
     <mat-form-field appearance="outline" class="search-control">
         <mat-label>Search</mat-label>
-        <input matInput placeholder="type to filter tickets" [formControl]="query">
+        <input id="filter-input" matInput placeholder="type to filter tickets" [formControl]="query">
         <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
 
-  <ul>
+  <ul id="ticket-list-container">
     <li *ngFor="let t of tickets">
       Ticket: {{t.id}}, {{t.description}}
       <button mat-button [routerLink]="['/' + t.id]" routerLinkActive="router-link-active" >Edit</button>
     </li>
   </ul>
 
-  <button mat-raised-button color="primary" [routerLink]="['/new']" >Add Ticket</button>
+  <button id="btn-add-ticket" mat-raised-button color="primary" [routerLink]="['/new']" >Add Ticket</button>
 
 </ng-container>
 
